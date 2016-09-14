@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>
+AD to BS convertor on JS
+</title>
+</head>
+<body>
+<div>AD: <span id="ad_date">sdfk</span></div>
+<div>BS: <span id="bs_date">sdfj</span></div>
+</body>
+</html>
+<script src="bsdate-converter.js">
+</script>
+<script type="text/javascript">
+var bsConvertor=new BikramSambatConverter();
+var date = new Date();
+bsConvertor.convert(date.getFullYear(), date.getMonth()+1, date.getDate());
+
+var bs_date=bsConvertor.eng_to_nep(date.getFullYear(), date.getMonth()+1, date.getDate());
+document.getElementById("ad_date").innerHTML = date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate();
+document.getElementById("bs_date").innerHTML=bs_date.year+"/"+bs_date.month+"/"+bs_date.date;
+</script>
